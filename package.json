@@ -1,0 +1,13 @@
+{
+  "name": "jacky-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Vue components shared by the jackymayo.ca apps: calendar, avatar, tag chip",
+  "exports": {
+    ".": "./src/index.js",
+    "./style-source": "./src"
+  },
+  "files": ["src"],
+  "peerDependencies": { "vue": "^3.5.0" }
+}

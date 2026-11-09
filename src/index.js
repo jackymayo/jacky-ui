@@ -10,3 +10,4 @@ export { formatRange, formatDuration, sameDay, toYmd, fromYmd } from './dateRang
 export { default as Navbar } from './components/Navbar.vue'
 export { default as Heading } from './components/Heading.vue'
 export { registerIcons } from './icons.js'
+export { ttv, loadEmotes } from './ttv.js'

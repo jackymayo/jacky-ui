@@ -1,7 +1,8 @@
 <script setup>
 // A heading with an optional icon in front of it. `icon` is one string: a picture URL, "fa:<name>" for a registered
-// Font Awesome icon, or plain text such as an emoji (see icons.js). No icon, an unknown icon, or a picture that fails to
+// Font Awesome icon, "ttv:<name>" for a Twitch emote from the shared dictionary, or plain text such as an emoji (see icons.js). No icon, an unknown icon, or a picture that fails to
 // load just leaves the heading on its own; it never shows a broken-image mark.
+//   <Heading icon="ttv:hamdance">Steps</Heading>
 //   <Heading icon="https://example.com/pic.webp">Steps</Heading>
 //   <Heading tag="p" icon="🕺" :size="20" class="text-sm font-semibold">Notes</Heading>
 import { computed, ref } from 'vue'
@@ -9,7 +10,7 @@ import { resolveIcon } from '../icons.js'
 
 const props = defineProps({
   tag: { type: String, default: 'h3' }, // the element to render: h1..h6, p, ...
-  icon: { type: String, default: '' }, // picture URL, "fa:<name>", or text/emoji
+  icon: { type: String, default: '' }, // picture URL, "fa:<name>", "ttv:<name>", or text/emoji
   size: { type: Number, default: 24 }, // icon height in px
   alt: { type: String, default: '' }, // for a picture; empty = decorative
 })

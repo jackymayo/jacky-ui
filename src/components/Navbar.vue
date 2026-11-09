@@ -3,6 +3,7 @@
 // It asks the accounts service itself, so each app only passes its own name and the accounts URL.
 import { ref, computed, onMounted } from 'vue'
 import Avatar from './Avatar.vue'
+import { loadEmotes } from '../ttv.js'
 
 const props = defineProps({
   app: { type: String, required: true }, // shown as the current app, e.g. "Todo"
@@ -27,6 +28,7 @@ onMounted(async () => {
   try {
     me.value = (await get('/api/auth/me')).profile
     apps.value = await get('/api/apps')
+    loadEmotes(base.value) // the shared emote dictionary, for headings (not awaited: pictures just appear when it arrives)
   } catch {} // logged out or accounts unreachable: show the logged-out bar
   loaded.value = true
 })

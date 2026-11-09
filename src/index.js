@@ -7,3 +7,4 @@ export { default as IncrementDecrement } from './components/IncrementDecrement.v
 export { default as BasicEventPanel } from './components/BasicEventPanel.vue'
 export { colors, DEFAULT_TYPE } from './eventTypes.js'
 export { formatRange, formatDuration, sameDay, toYmd, fromYmd } from './dateRange.js'
+export { default as Navbar } from './components/Navbar.vue'

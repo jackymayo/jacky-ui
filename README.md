@@ -22,7 +22,7 @@ An event is `{ id, title, description, type, start: Date, end: Date }`.
 public, so keep private links (and which pictures you use) in the app, not here.
 
 ## Using it in an app
-1. `package.json`: `"jacky-ui": "https://github.com/jackymayo/jacky-ui/archive/refs/tags/v0.3.0.tar.gz"` (pin a tag; bump it
+1. `package.json`: `"jacky-ui": "https://github.com/jackymayo/jacky-ui/archive/refs/tags/v0.3.1.tar.gz"` (pin a tag; bump it
    to take updates). The tarball form needs no `git` in the Docker build image, unlike `github:jackymayo/jacky-ui#tag`.
 2. `style.css`, so Tailwind generates the package's classes:
    ```css

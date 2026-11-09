@@ -4,7 +4,9 @@
 //   anything else                                   plain text, such as an emoji or a short symbol
 // jacky-ui bundles no Font Awesome itself: an app that wants `fa:` icons hands over the definitions it already has,
 // e.g. registerIcons({ phone: faPhone }) with icons from @fortawesome/free-solid-svg-icons.
-const registry = {}
+// One registry for the whole page, kept on globalThis: a bundler can load this file twice (Vite's dev server bundles a package's
+// entry file apart from its .vue files), and two private registries would mean registerIcons never reaches Heading.
+const registry = (globalThis.__jackyUiIcons ??= {})
 
 export function registerIcons(defs) {
   Object.assign(registry, defs)

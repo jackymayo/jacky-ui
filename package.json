@@ -1,9 +1,9 @@
 {
   "name": "jacky-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "description": "Vue components shared by the jackymayo.ca apps: calendar, avatar, tag chip",
+  "description": "Vue components shared by the jackymayo.ca apps: calendar, avatar, tag chip, heading with emote",
   "exports": {
     ".": "./src/index.js",
     "./style-source": "./src"

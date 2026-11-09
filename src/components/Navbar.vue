@@ -46,8 +46,8 @@ async function logout() {
   <header class="relative z-30 border-b border-slate-200 bg-white text-slate-900">
     <div class="mx-auto flex min-h-12 max-w-5xl items-center justify-between gap-2 px-4">
       <div class="flex items-center gap-1">
-        <a :href="base" class="text-sm font-semibold text-slate-500 hover:text-slate-800">Jacky</a>
-        <span class="text-slate-300" aria-hidden="true">/</span>
+        <a :href="base" class="hidden text-sm font-semibold text-slate-500 hover:text-slate-800 min-[360px]:inline">Jacky</a>
+        <span class="hidden text-slate-300 min-[360px]:inline" aria-hidden="true">/</span>
         <span class="text-sm font-bold" aria-current="page">{{ app }}</span>
         <div class="relative">
           <button class="flex size-11 items-center justify-center rounded text-slate-500 hover:bg-slate-100"
@@ -65,14 +65,14 @@ async function logout() {
         </div>
       </div>
 
-      <div v-if="loaded" class="flex items-center gap-1 text-sm">
+      <div v-if="loaded" class="flex min-w-0 items-center gap-1 text-sm">
         <template v-if="me">
-          <a :href="base" class="flex min-h-11 items-center gap-2 rounded px-2 hover:bg-slate-100">
-            <Avatar :profile="me" :size="28" /><span class="max-w-32 truncate">{{ me.name }}</span>
+          <a :href="base" class="flex min-h-11 min-w-0 items-center gap-2 rounded px-2 hover:bg-slate-100">
+            <Avatar :profile="me" :size="28" /><span class="min-w-0 max-w-20 truncate sm:max-w-32">{{ me.name }}</span>
           </a>
-          <Button icon="ttv:donowall" :size="22" class="min-h-11 rounded px-3 text-indigo-700 hover:bg-indigo-50" @click="logout">Log out</Button>
+          <Button icon="ttv:donowall" :size="22" class="min-h-11 shrink-0 whitespace-nowrap rounded px-3 text-indigo-700 hover:bg-indigo-50" @click="logout">Log out</Button>
         </template>
-        <Button v-else :href="loginUrl" class="min-h-11 rounded px-3 font-semibold text-indigo-700 hover:bg-indigo-50">Log in</Button>
+        <Button v-else :href="loginUrl" class="min-h-11 shrink-0 whitespace-nowrap rounded px-3 font-semibold text-indigo-700 hover:bg-indigo-50">Log in</Button>
       </div>
     </div>
   </header>

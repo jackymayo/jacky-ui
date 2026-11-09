@@ -3,6 +3,7 @@
 // It asks the accounts service itself, so each app only passes its own name and the accounts URL.
 import { ref, computed, onMounted } from 'vue'
 import Avatar from './Avatar.vue'
+import Button from './Button.vue'
 import { loadEmotes } from '../ttv.js'
 
 const props = defineProps({
@@ -69,9 +70,9 @@ async function logout() {
           <a :href="base" class="flex min-h-11 items-center gap-2 rounded px-2 hover:bg-slate-100">
             <Avatar :profile="me" :size="28" /><span class="max-w-32 truncate">{{ me.name }}</span>
           </a>
-          <button class="min-h-11 rounded px-3 text-indigo-700 hover:bg-indigo-50" @click="logout">Log out</button>
+          <Button icon="ttv:donowall" :size="22" class="min-h-11 rounded px-3 text-indigo-700 hover:bg-indigo-50" @click="logout">Log out</Button>
         </template>
-        <a v-else :href="loginUrl" class="flex min-h-11 items-center rounded px-3 font-semibold text-indigo-700 hover:bg-indigo-50">Log in</a>
+        <Button v-else :href="loginUrl" class="min-h-11 rounded px-3 font-semibold text-indigo-700 hover:bg-indigo-50">Log in</Button>
       </div>
     </div>
   </header>

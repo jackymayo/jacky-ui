@@ -9,13 +9,14 @@ step, the consuming app's Vite compiles the `.vue` files.
 | `TagChip` | two-part chip `baking │ sourdough`. Prop `tag` = `{ tag, detail }`, optional `removable` |
 | `DayView` | day calendar: drag to reschedule, create, select. Props `events`, `initialDay`, `initialSelected`; emits `update`, `create`, `delete`, `day-change`. Slot `panel` replaces the side panel (Fulfill uses it for live editing) |
 | `EventList` | the planned-events list, upcoming first, with date ranges; emits `open(date, id)` and `create` |
-| `EventModal`, `BasicEventPanel` | the create dialog and the default side panel |
+| `EventModal`, `BasicEventPanel`, `IncrementDecrement` | the create dialog, the default side panel and the duration stepper |
 | `formatRange`, `formatDuration`, `toYmd`, `fromYmd`, `sameDay`, `colors`, `DEFAULT_TYPE` | helpers |
 
 An event is `{ id, title, description, type, start: Date, end: Date }`.
 
 ## Using it in an app
-1. `package.json`: `"jacky-ui": "github:jackymayo/jacky-ui#v0.1.0"` (pin a tag; bump it to take updates).
+1. `package.json`: `"jacky-ui": "https://github.com/jackymayo/jacky-ui/archive/refs/tags/v0.1.1.tar.gz"` (pin a tag; bump it
+   to take updates). The tarball form needs no `git` in the Docker build image, unlike `github:jackymayo/jacky-ui#tag`.
 2. `style.css`, so Tailwind generates the package's classes:
    ```css
    @import "tailwindcss";
